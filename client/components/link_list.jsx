@@ -11,5 +11,5 @@ const linkList = () => {
 
 export default withTracker(() => {
   Meteor.subscribe("links");
-  return { links: Links.find({}).fetch()}
+  return { links: Links.find({}).fetch() }
 }) (linkList); // Link List is the component we're injecting the publication into
