@@ -7,6 +7,7 @@ const LinkCreate = () => {
   // Create reference 
   const inputEl = useRef("");
   const handleSubmit = event => {
+    event.preventDefault()
     // Validate the URL
     Meteor.call("links.insert", inputEl.current.value, error => {
       if (error) {
@@ -16,8 +17,6 @@ const LinkCreate = () => {
         setError("");
       }
     })
-
-    event.preventDefault()
   }
   return (
     <form onSubmit={handleSubmit}>
