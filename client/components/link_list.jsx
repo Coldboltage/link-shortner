@@ -9,7 +9,8 @@ const linkList = () => {
   )
 }
 
+// Creating container
 export default withTracker(() => {
-  Meteor.subscribe("links");
+  Meteor.subscribe("links"); // Publication added to container
   return { links: Links.find({}).fetch() }
 }) (linkList); // Link List is the component we're injecting the publication into
