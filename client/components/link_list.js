@@ -8,10 +8,10 @@ const LinkList = (props) => {
     return props.links.map(link => {
       // Preparing 
       const { url, clicks, token } = link;
-      const shortLink = `https://localhost:3000/${token}`;
+      const shortLink = `http://localhost:3000/${token}`;
 
       return (
-        <tr>
+        <tr key={token}>
           <td>{url}</td>
           <td>
             <a href={shortLink}>{shortLink}</a>
